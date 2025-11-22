@@ -31,3 +31,4 @@ sudo apt  install cmake  # version 3.27.8-1build
 
 then itshould run with the first block of code
 
+That worked thanks! :D
