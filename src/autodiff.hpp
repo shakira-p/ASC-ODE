@@ -1,8 +1,11 @@
 #ifndef AUTODIFF_HPP
 #define AUTODIFF_HPP
 
-#include <array>
+#include <cstddef>
+#include <ostream>
 #include <cmath>
+#include <array>
+
 
 namespace ASC_ode
 {
