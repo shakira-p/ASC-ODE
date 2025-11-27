@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Welcome to ASC-ODE’s documentation! &#8212; ASC-ODE</title>
+    <title>1. Numerical Simulation and Scientific Computing I &#8212; ASC-ODE</title>
   
   
   
@@ -57,12 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'REPORT_ex1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Numerical Simulation and Scientific Computing I" href="REPORT_ex1.html" />
+    <link rel="prev" title="Welcome to ASC-ODE’s documentation!" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,7 +141,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -176,15 +172,15 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Welcome to ASC-ODE’s documentation!
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Improved Euler and Crank-Nicolson Methods</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="REPORT_ex1.html">1. <center> Numerical Simulation and Scientific Computing I </center></a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. <center> Numerical Simulation and Scientific Computing I </center></a></li>
 
 
 </ul>
@@ -256,7 +252,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/REPORT_ex1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -266,7 +262,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -340,7 +336,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to ASC-ODE’s documentation!</h1>
+    <h1><center> Numerical Simulation and Scientific Computing I </center></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -350,9 +346,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-time-stepping-methods-are">Available time-stepping methods are</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. <center> Numerical Simulation and Scientific Computing I </center></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#team-11">2. Team 11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">3. Part 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-plots">3.1. Phase plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">3.2. Time Evolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.3. </a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -363,60 +366,37 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="welcome-to-asc-ode-s-documentation">
-<h1>Welcome to ASC-ODE’s documentation!<a class="headerlink" href="#welcome-to-asc-ode-s-documentation" title="Link to this heading">#</a></h1>
-<p>ASC-ODE is is a C++ library for solving ordinary differential equations (ODEs).
-The equation is defined by the right hand side function.
-ASC-ODE provides various time-steppers which may be used for odes with right hand sides
-given by a function object.</p>
-<p>A small demo for solving a mass-spring model as first order ODE</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{eqnarray*}
-y_0^\prime &amp; = &amp; y_1 \\
-y_1^\prime &amp; = &amp; -\frac{k}{m} y_0
-\end{eqnarray*}\]</div>
-<p>is here:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="n">tend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="o">*</span><span class="n">M_PI</span><span class="p">;</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span>
-<span class="kt">double</span><span class="w"> </span><span class="n">tau</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tend</span><span class="o">/</span><span class="n">steps</span><span class="p">;</span>
-
-<span class="n">Vector</span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">};</span><span class="w">  </span><span class="c1">// initial conditions</span>
-<span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">NonlinearFunction</span><span class="o">&gt;</span><span class="w"> </span><span class="n">rhs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">MassSpring</span><span class="o">&gt;</span><span class="p">(</span><span class="n">mass</span><span class="p">,</span><span class="w"> </span><span class="n">stiffness</span><span class="p">);</span>
-<span class="w">  </span>
-<span class="n">ExplicitEuler</span><span class="w"> </span><span class="nf">stepper</span><span class="p">(</span><span class="n">rhs</span><span class="p">);</span>
-
-<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">steps</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="w">  </span><span class="p">{</span>
-<span class="w">     </span><span class="n">stepper</span><span class="p">.</span><span class="n">DoStep</span><span class="p">(</span><span class="n">tau</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-<span class="w">     </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tau</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;  &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="w">  </span><span class="p">}</span>
-</pre></div>
-</div>
-<p>The result of this simulation in phase space is shown here:</p>
-<a class="reference internal image-reference" href="_images/massspring_phase.png"><img alt="_images/massspring_phase.png" class="align-center" src="_images/massspring_phase.png" style="width: 40%;" />
-</a>
-<section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
-<p>install XXX-odesolver it via git-clone:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/my-github-clone/my-ode-solver.git
-</pre></div>
-</div>
-<p>To configure and build some tests do</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd my-ode-solver
-mkdir build
-cd build
-cmake ..
-make
-</pre></div>
-</div>
+  <section id="numerical-simulation-and-scientific-computing-i">
+<h1><span class="section-number">1. </span><center> Numerical Simulation and Scientific Computing I </center><a class="headerlink" href="#numerical-simulation-and-scientific-computing-i" title="Link to this heading">#</a></h1>
 </section>
-<section id="available-time-stepping-methods-are">
-<h2>Available time-stepping methods are<a class="headerlink" href="#available-time-stepping-methods-are" title="Link to this heading">#</a></h2>
-<p>…</p>
+<section id="team-11">
+<h1><span class="section-number">2. </span>Team 11<a class="headerlink" href="#team-11" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Shakira Pannier (12509817)</p></li>
+<li><p>Leon Orou (12125027)</p></li>
+<li><p>Natalia Ksiazek (12507337)</p></li>
+</ul>
+<hr class="docutils" />
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<section id="part-1">
+<h1><span class="section-number">3. </span>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">#</a></h1>
+<section id="phase-plots">
+<h2><span class="section-number">3.1. </span>Phase plots<a class="headerlink" href="#phase-plots" title="Link to this heading">#</a></h2>
+<p>steps = {100, 150, 200}</p>
+<p><img alt="PhasePlot100" src="../ASC-ODE/demos/plots/MassSpringPhasePlot_100.png" />
+<img alt="PhasePlot150" src="../ASC-ODE/demos/plots/MassSpringPhasePlot_150.png" />
+<img alt="PhasePlot200" src="../ASC-ODE/demos/plots/MassSpringPhasePlot_200.png" /></p>
+</section>
+<section id="time-evolution">
+<h2><span class="section-number">3.2. </span>Time Evolution<a class="headerlink" href="#time-evolution" title="Link to this heading">#</a></h2>
+<p>steps = {100, 150, 200}</p>
+<p><img alt="TimeEvolution100" src="../ASC-ODE/demos/plots/MassSpringSystemTimeEvolution_100.png" />
+<img alt="TimeEvolution150" src="../ASC-ODE/demos/plots/MassSpringSystemTimeEvolution_150.png" />
+<img alt="TimeEvolution200" src="../ASC-ODE/demos/plots/MassSpringSystemTimeEvolution_200.png" /></p>
+</section>
+<section id="id1">
+<h2><span class="section-number">3.3. </span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -449,14 +429,14 @@ make
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="REPORT_ex1.html"
-       title="next page">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span><center> Numerical Simulation and Scientific Computing I </center></p>
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to ASC-ODE’s documentation!</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -474,9 +454,16 @@ make
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#available-time-stepping-methods-are">Available time-stepping methods are</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1. <center> Numerical Simulation and Scientific Computing I </center></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#team-11">2. Team 11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1">3. Part 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-plots">3.1. Phase plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-evolution">3.2. Time Evolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.3. </a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
