@@ -73,7 +73,7 @@ int main(int argc, char* argv[])
 
   // Gauss3c .. points tabulated, compute a,b:
   auto [Gauss3a,Gauss3b] = ComputeABfromC (Gauss3c);
-  ImplicitRungeKutta stepper(rhs, Gauss3a, Gauss3b, Gauss3c);
+  //ImplicitRungeKutta stepper(rhs, Gauss3a, Gauss3b, Gauss3c);
 
 
   /*
