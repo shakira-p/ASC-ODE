@@ -29,9 +29,16 @@ template <typename T>
 }
 
 
-
-int main()
+int main()  // int argc, char* argv[]
 {
+  // if (argc != 2) {
+  //   std::cout << "Usage: " << argv[0] << " <x>" << std::endl;
+  //   return 1;
+  // }
+  // double x = std::stod(argv[1]);
+  //
+  // double y =
+
   double x = 1, y = 2;
   AutoDiff<2> adx = Variable<0>(x);
   AutoDiff<2> ady = Variable<1>(y);
@@ -64,12 +71,5 @@ int main()
 
   // Evaluate and plot Legendre-polynomials up to order 5, in the interval -1<=x<=1
   // Evaluate and plot also their derivatives (using AutoDiff)
-
-  for (int n = 0; n <= 5; ++n) {
-    std::vector<double> P;
-    LegendrePolynomials(n, 0.5, P);
-    std::cout << "P_" << n << " = " << P << std::endl;
-  }
-
 
 }
